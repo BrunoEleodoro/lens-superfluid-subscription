@@ -1,12 +1,13 @@
 import { useWalletLogout } from '@lens-protocol/react-web';
+import { Button } from '@material-tailwind/react';
 
 function LogoutButton() {
   const { execute: logout, isPending } = useWalletLogout();
 
   return (
-    <button disabled={isPending} onClick={logout}>
+    <Button disabled={isPending} onClick={logout} color="red">
       Log out
-    </button>
+    </Button>
   );
 }
 export default LogoutButton;

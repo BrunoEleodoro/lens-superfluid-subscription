@@ -1,4 +1,5 @@
 import { useWalletLogin } from '@lens-protocol/react-web';
+import { Button } from '@material-tailwind/react';
 import { useAccount, useConnect, useDisconnect } from 'wagmi';
 import { InjectedConnector } from 'wagmi/connectors/injected';
 
@@ -30,11 +31,11 @@ function LoginButton() {
   };
 
   return (
-    <div>
+    <div className="flex justify-center flex-row w-full">
       {loginError && <p>{loginError.message}</p>}
-      <button disabled={isLoginPending} onClick={onLoginClick}>
-        Log in
-      </button>
+      <Button disabled={isLoginPending} onClick={onLoginClick}>
+        Connect
+      </Button>
     </div>
   );
 }
